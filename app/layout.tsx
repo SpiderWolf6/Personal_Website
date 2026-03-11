@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 // Metadata for SEO - Update with your information
 export const metadata: Metadata = {
-  title: "Your Name - Portfolio",
+  title: "Soham Mukherjee",
   description: "Personal portfolio website showcasing my projects and experience",
 };
 
