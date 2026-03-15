@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/Navbar";
@@ -8,8 +7,6 @@ import { StarBackground } from "@/components/StarBackground";
 import { CursorEffect } from "@/components/CursorEffect";
 import { PageTransitionWrapper } from "@/components/PageTransitionWrapper";
 
-// Load Inter font from Google Fonts
-const inter = Inter({ subsets: ["latin"] });
 
 // Metadata for SEO - Update with your information
 export const metadata: Metadata = {
@@ -32,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body>
         {/* ThemeProvider enables dark/light mode throughout the app */}
         <ThemeProvider
           attribute="class"
