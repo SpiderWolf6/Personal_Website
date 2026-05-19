@@ -321,7 +321,7 @@ const education: ExperienceItem[] = [
     description:
       "In progress. Focused on applied data science and AI/ML.",
     highlights: [
-      "GPA: 3.9/4.0",
+      "GPA: 3.8/4.0",
       "Posse Scholar",
       "Relevant coursework: Matrix Methods in Machine Learning, Big Data Systems, Operating Systems", 
     ],
