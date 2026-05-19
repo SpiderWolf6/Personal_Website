@@ -1,98 +1,53 @@
 "use client";
 
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail, Sparkles } from "lucide-react";
-import { useState, MouseEvent } from "react";
 
-/**
- * Home Page Component - Space Hub / Mission Control
- * 
- * Features:
- * - Floating hero card with 3D tilt on mouse move
- * - Staggered text animations
- * - Portal-style CTA buttons with magnetic hover
- * - Energy glow effects
- * - Acts as the hub to other worlds
- */
 export default function Home() {
-  const [isHovering, setIsHovering] = useState(false);
-  
-  // Motion values for 3D tilt effect
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const rotateX = useTransform(mouseY, [-300, 300], [10, -10]);
-  const rotateY = useTransform(mouseX, [-300, 300], [-10, 10]);
-
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    
-    mouseX.set(e.clientX - centerX);
-    mouseY.set(e.clientY - centerY);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-    setIsHovering(false);
-  };
-
   return (
     <div className="container mx-auto px-4 py-6 relative overflow-hidden max-w-6xl">
-      {/* Floating Hero Card with 3D Tilt */}
+      {/* Floating Hero Card */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        onMouseMove={handleMouseMove}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={handleMouseLeave}
-        style={{
-          rotateX,
-          rotateY,
-          transformStyle: "preserve-3d",
-        }}
-        className="max-w-4xl mx-auto text-center perspective-1000 will-change-transform"
+        whileHover={{ scale: 1.02, boxShadow: "0 0 40px 10px rgba(99,102,241,0.20), 0 4px 32px 0 rgba(99,102,241,0.12)" }}
+        className="max-w-4xl mx-auto text-center"
       >
-        {/* Glowing card background */}
         <div className="relative">
-          {/* Animated glow on hover */}
-          <motion.div
-            animate={{
-              opacity: isHovering ? 0.3 : 0.15,
-              scale: isHovering ? 1.05 : 1,
-            }}
-            transition={{ duration: 0.3 }}
-            className="absolute -inset-4 bg-gradient-to-r from-indigo-600 via-indigo-600 to-indigo-600 rounded-3xl blur-2xl"
+          <div
+            className="absolute -inset-4 bg-gradient-to-r from-indigo-600 via-indigo-600 to-indigo-600 rounded-3xl blur-2xl opacity-15"
             aria-hidden="true"
           />
-          
+
           {/* Main content card */}
           <div className="relative bg-background/80 backdrop-blur-xl border border-indigo-500/20 rounded-2xl p-6 md:p-12 shadow-2xl">
-            {/* Mission Control Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.5, type: "spring" }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-8"
-            >
-              <Sparkles className="w-4 h-4 text-indigo-400" />
-              <span className="text-sm font-medium text-indigo-300">Systems Online</span>
-            </motion.div>
+            {/* Systems Online Badge with glass shine + hover bubbles */}
+            <div className="relative flex flex-col items-center mb-8 w-full">
+              {/* Bubble icons that appear on hover */}
+
+              {/* Systems Online pill with glass shine animation */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3, duration: 0.5, type: "spring" }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 glass-shine cursor-pointer"
+              >
+                <Sparkles className="w-4 h-4 text-indigo-400 relative z-10" />
+                <span className="text-sm font-medium text-indigo-300 relative z-10">Systems Online</span>
+              </motion.div>
+            </div>
 
             {/* Staggered Headline Animation */}
             <div className="space-y-3 mb-6">
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-6xl lg:text-7xl font-bold"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                {/* Staggered text reveal */}
                 {"Hi, I'm ".split("").map((char, i) => (
                   <motion.span
                     key={`hi-${i}`}
@@ -110,15 +65,15 @@ export default function Home() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.9 + i * 0.05 }}
-                      className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-indigo-400 to-indigo-400"
+                      className="text-indigo-400"
                     >
                       {char === " " ? "\u00A0" : char}
                     </motion.span>
                   ))}
                 </span>
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.3, duration: 0.5 }}
@@ -129,18 +84,17 @@ export default function Home() {
             </div>
 
             {/* Introduction */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.6, duration: 0.5 }}
               className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6"
             >
-              I'm a software developer with a computer engineering background, and 
-              a passion for building applied, data-driven solutions across various domains.
+              Computer engineer passionate about the intersection of software, AI/ML, and data science. Building applied solutions across diverse industries and domains.
             </motion.p>
 
             {/* Portal-Style CTA Buttons */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.9, duration: 0.5 }}
@@ -152,9 +106,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                   className="relative group"
                 >
-                  {/* Button glow effect */}
                   <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-indigo-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300" />
-                  
                   <Button size="lg" className="relative w-full bg-gradient-to-r from-indigo-600 to-indigo-600 hover:from-indigo-500 hover:to-indigo-500 border-0">
                     <Sparkles className="mr-2 h-4 w-4" />
                     Explore Projects
@@ -162,7 +114,7 @@ export default function Home() {
                   </Button>
                 </motion.div>
               </Link>
-              
+
               <Link href="/contact" className="w-full sm:w-auto">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -175,8 +127,8 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* Social Links with stagger */}
-            <motion.div 
+            {/* Social Links */}
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2.2, duration: 0.5 }}
@@ -223,7 +175,7 @@ export default function Home() {
         className="absolute top-10 left-5 md:top-20 md:left-10 w-24 h-24 md:w-32 md:h-32 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"
         aria-hidden="true"
       />
-      
+
       <motion.div
         animate={{
           y: [0, 20, 0],

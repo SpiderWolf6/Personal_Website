@@ -259,61 +259,55 @@ const workExperience: ExperienceItem[] = [
       "Currently building an agentic-RAG AI research assistant to improve productivity of research scientists.",
     highlights: [
       "Improved data pipelines by generating automated multi-level summary reports at patient, mutation, and clone levels.",
-      "Conducted BLAST and statistical analysis on 80+ bladder cancer patients, analyzing 3,700+ genes and 100,000+ ninemers using Python and SLURM.",
+      "Conducted BLAST and statistical analysis on 80+ bladder cancer patients, spanning 3,700+ genes and 100,000+ ninemers using Python and SLURM.",
       "Analyzed 700+ signal peptides and protein expression using Random Forest and Selenium for a research paper.",
+    ],
+  },
+  {
+    title: "AI Intern",
+    organization: "Ascendion Inc.",
+    date: "May 2026 - Present",
+    description: "Researching emerging AI systems including Graph RAG, LLM Wiki architectures, token optimization, SLMs, multi-agent evaluation, and voice-to-voice models for enterprise AI applications.",
+    highlights: [
+    ],
+  },
+  {
+    title: "Men's Soccer Staff",
+    organization: "Wisconsin Athletics",
+    date: "Aug 2025 - Present",
+    description: "",
+    highlights: [
+      "Creating weekly opponent scouting reports using video analysis and advanced metrics (possession %, PPDA, deep completed crosses, aerial duels won, etc) to inform tactics for 10+ matches.",
+      "Engineered an internal AI-driven intelligence platform featuring player and team performance analytics, with data visualization across 30+ metrics from 27 training sessions.",
+      "Supported with training, equipment, and matchday operations, ensuring smooth execution alongside coaching staff.",
+    ],
+  },
+  {
+    title: "Head of Software",
+    organization: "WiscoHumanoids",
+    date: "Jan 2026 - Present",
+    description: "",
+    highlights: [
+      "Lead software strategy for a 50-member team, overseeing development in robot policies, imitation & reinforcement learning, perception (SLAM, VLA), simulation (URDF, Isaac Sim), full-stack ROS2 integration.",
     ],
   },
   {
     title: "Career Coaching Scholar",
     organization: "Apple",
     date: "Jan 2026 - Present",
-    description:
-      "",
+    description: "",
     highlights: [
       "Selected as 1 of 23 mentees for a competitive 6-month mentorship with an Apple engineer.",
-    ],
-  },
-  {
-    title: "Head of Software Engineering",
-    organization: "WiscoHumanoids",
-    date: "Jan 2026 - Present",
-    description:
-      "",
-    highlights: [
-      "Lead software strategy for a 50-member team, overseeing development in robot policies, imitation & reinforcement learning, perception (SLAM, VLA), simulation (URDF, Isaac Sim), full-stack ROS2 integration.",
-    ],
-  },
-  {
-    title: "Student Leadership Fellow",
-    organization: "Accenture",
-    date: "Feb 2026 - Present",
-    description:
-      "",
-    highlights: [
-      "Selected for a highly competitive 10-week leadership development program with mentorship from Accenture executives.",
     ],
   },
   {
     title: "Vice President of Engineering",
     organization: "Software Development Club",
     date: "Sep 2025 - Present",
-    description:
-      "",
+    description: "",
     highlights: [
       "Hosted meetings for 100+ club members, introducing them to diverse aspects of the computer science industry.",
       "Directed the projects committee, guiding members through semester-long group coding projects in interest areas.",
-    ],
-  },
-  {
-    title: "Student Manager and Analyst",
-    organization: "Wisconsin Badgers Division I Men's Soccer",
-    date: "Jan 2025 - Present",
-    description:
-      "",
-    highlights: [
-      "Creating weekly opponent scouting reports using video analysis and advanced metrics (possession %, PPDA, deep completed crosses, aerial duels won, etc) to inform tactics for 10+ matches.",
-      "Built an AI sports agent with CrewAI to analyze 40+ opposition metrics and suggest tactical counter-strategies.",
-      "Supported with training, equipment, and matchday operations, ensuring smooth execution alongside coaching staff.",
     ],
   },
 ];
@@ -339,7 +333,7 @@ const education: ExperienceItem[] = [
     description:
       "Graduated with distinction. Active in student clubs and leadership.",
     highlights: [
-      "GPA: 95/100",
+      "GPA: 4.0/4.0",
       "SAT: 1560",
       "Founder and President of Sports Management Club",
       "Stuyvesant Spectator (Sports Writer)",
@@ -418,6 +412,13 @@ const learningTracks: LearningTrack[] = [
         type: "program",
         provider: "Goldman Sachs",
         date: "2025",
+      },
+      {
+        title: "Student Leadership Fellow",
+        type: "program",
+        provider: "Accenture",
+        date: "2026",
+        description: "Built a 13-signal data integration scoring tool and gained industry insight through Accenture mentorship.",
       },
     ],
   },

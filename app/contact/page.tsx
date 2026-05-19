@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 
 /**
@@ -146,20 +146,6 @@ export default function ContactPage() {
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       smukherjee39@wisc.edu
-                    </a>
-                  </div>
-                </div>
-
-                {/* Phone (optional) */}
-                <div className="flex items-start gap-4">
-                  <Phone className="h-5 w-5 text-primary mt-1" />
-                  <div>
-                    <p className="font-medium">Phone</p>
-                    <a
-                      href="tel:+17323310738"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      +1 (732) 331-0738
                     </a>
                   </div>
                 </div>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
@@ -32,11 +33,11 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4">
+      <div className="w-full px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo/Brand */}
-          <Link href="/" className="text-xl font-bold hover:text-primary transition-colors">
-            Soham Mukherjee
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <Image src="/logo.png" alt="Soham Mukherjee" width={40} height={40} className="rounded-full" />
           </Link>
 
           {/* Desktop Navigation */}

@@ -20,7 +20,7 @@ export function Footer() {
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">Soham Mukherjee</h3>
             <p className="text-sm text-muted-foreground">
-              Software developer with a computer engineering background, interested in building applied, data-driven solutions across various domains.
+              Computer engineer at the intersection of software, AI/ML, and data science, building applied solutions across diverse industries and domains.
             </p>
           </div>
 

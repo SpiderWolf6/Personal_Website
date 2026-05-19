@@ -12,6 +12,9 @@ import { PageTransitionWrapper } from "@/components/PageTransitionWrapper";
 export const metadata: Metadata = {
   title: "Soham Mukherjee",
   description: "Personal portfolio website showcasing my projects and experience",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 /**
